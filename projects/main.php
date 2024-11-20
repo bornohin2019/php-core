@@ -1,0 +1,12 @@
+<?php
+include('homePage.php');
+include('navbar.php');
+include('body.php');
+include("fotter.php");
+?>
+<?php
+include('homePage.php');
+include('navbar.php');
+include('body.php');
+include("fotter.php");
+?>
