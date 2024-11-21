@@ -1,55 +1,64 @@
 <?php
 class Cycle{
     public $name;
-    public $hight;
+    public $age;
 
-    // function __construct(){
-    //     echo "this is construct function";
-    // }
-    //  function __construct($myName,$myHight){
-    //    $this->name=$myName;
-    //     $this->hight=$myHight;
-    //     echo "this is cycle class <br>";
-    // }
-    function set_name(){
-        echo "THIS IS USER-DEFINE FUNCTION";
+    function __construct($personName, $personAge){
+        echo "It's Construct.<br>";
+         echo $this->name=$personName;
+         echo $this->age=$personAge;
+    }
+//      function __construct($myName,$myAge){
+//        $this->name=$myName;
+//         $this->hight=$myAge;
+//         echo "this is cycle class <br>";
+//     }
+    function getName(){
+        echo "<br>My Name is {$this->name}<br>";
+    }
+    function getAge(){
+        echo "<br>I am {$this->age} Years Old.";
     }
 
-    function set_anoter(){
-        echo 'this is anoter user-define function';
-    }
+//     function set_anoter(){
+//         echo 'this is anoter user-define function';
+//     }
 }
 
-// $myObj= new Cycle("Rabbani Mia","5.4");
+$myObj= new Cycle("Megh<br>", "24");
+$myObj ->getname();
+$myObj ->getAge();
+// echo $myObj->name;
+// echo $myObj->hight;
 // echo $myObj->name;
 // echo $myObj->size;
 
 // echo $myObj->set_name();
 
 // inheritance Cycle class to Bike class 
-class Bike extends Cycle{
-    public $name="BMW";
-    public $color;
+// class Bike extends Cycle{
+//     public $name="BMW";
+//     public $color;
 
-    function __destruct(){
-        echo"bye";
-    }
-    function __construct($myName,$mySize,$myColor){
-    //    $this->name=$myName;
-    //     $this->size=$mySize;
-    //     $this->color=$myColor;
-    echo"hello<br>";
+//     function __destruct(){
+//         echo"bye";
+//     }
+//     function __construct($myName,$mySize,$myColor){
+//        $this->name=$myName;
+//         $this->size=$mySize;
+//         $this->color=$myColor;
+//     echo"hello<br>";
        
-    }
-    function info(){
+//     }
+//     function info(){
         
-        echo"work<br>";
-    }
-}
+//         echo"work<br>";
+//     }
+// }
 
-$bikeObj= new Bike("rabbani <br>","5.4' <br>","blue");
-$bikeObj->info();
-echo Bike::$name;
+// $bikeObj= new Bike("rabbani <br>","5.4' <br>","blue");
+// $bikeObj->info();
+// echo Bike::$name;
 // echo $bikeObj->name;
 // echo $bikeObj->size;
 // echo $bikeObj->color;
