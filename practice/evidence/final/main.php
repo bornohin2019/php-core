@@ -1,23 +1,21 @@
-<?php
-require_once "myClass.php";
-
+<?php session_start();
 if(isset($_POST['btnSubmit'])){
     $id = $_POST['trainID'];
     $name = $_POST['trainName'];
-    // echo "$id, $name";
 
-    // create a object 
-    $traineeObject = new Trainee($id, $name);
-    $traineeObject->save();
+
+    if($id=="100" && $name=="Badon"){
+        $_SESSION['rname']=$name;
+        header("location:demo.php");
+    }
+    else{
+        $msg="eror";
+    }
+
 }
 
-
-
-
-
-
+   
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +24,9 @@ if(isset($_POST['btnSubmit'])){
     <title>PHP Login Form</title>
 </head>
 <body>
+    <?php 
+        echo (isset($msg)?$msg:"");
+    ?>
     <form action="#" method="post">
         <div>
             <label for="id">TrainID</label><br>
@@ -36,10 +37,7 @@ if(isset($_POST['btnSubmit'])){
             <input type="text" name="trainName" id=""><br>
         </div>
         <input type="submit" value="Submit" name="btnSubmit">
+        <a href="logout.php">Logout</a>
     </form>
-
-    <?php
-        Trainee::display();
-    ?>
 </body>
 </html>

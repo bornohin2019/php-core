@@ -16,7 +16,7 @@ class Trainee{
     }
     static function display(){
         $myArray = file('store.txt');
-        echo "TrainID || TraineeName <>";
+        echo "TrainID || TraineeName <br>";
         // print_r($myArray);
         foreach($myArray as $singleData){
             list($id, $name) = explode(',', $singleData);
