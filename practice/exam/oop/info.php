@@ -20,10 +20,7 @@ function __construct($id,$name) {
     // stap 05 data in  dispalay 
      public  static function displayData(){
         $data=file(self::$file_path);
-        echo"<b>ID | Name </b>";
-        foreach($data as $){
-
-        }
+        // echo"<b>ID | Name </b>";
 
      }
  }

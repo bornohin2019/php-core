@@ -19,12 +19,12 @@
 $number =$_POST['number'];
 $fact=1;
 
-if($number ==0 || $number==1){
-    echo "$number factorial is 1";
+if($number < 0 ){
+    echo "$number enter +ve Number";
 }
 else{
     for($i=2; $i<= $number; $i++){
-        $fact = $fact *$i;
+        $fact *= $i;
     }
     echo "$number factorial is $fact";
     echo "<br><br>";
