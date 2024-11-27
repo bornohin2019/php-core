@@ -20,9 +20,9 @@ class Trainee{
             file_put_contents('store.txt', $this->combined(), FILE_APPEND);
     }
 
-    static function display(){
+    public static function display(){
         $myInput=file('store.txt');
-        echo " $myId || $myName ";
+        echo " myId || myName ";
 
 
         foreach($myInput as $singleData){

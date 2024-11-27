@@ -11,11 +11,6 @@ if(isset($_POST['btnSubmit'])){
     $traineeObject->save();
 }
 
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>

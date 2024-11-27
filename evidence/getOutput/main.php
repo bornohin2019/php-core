@@ -2,12 +2,12 @@
 require_once("myClass.php");
 if(isset($_POST['btnSubmit'])){
     $id = $_POST['myId'];
-    $name= $_POST[myName];
-}
+    $name= $_POST['myName'];
+
 
 $myObj = new Trainee($id,$name);
-$myObj= save();
-
+$myObj->save();
+}
 
 
 ?>
@@ -23,11 +23,14 @@ $myObj= save();
 </head>
 <body>
     <section>
-        <form action="" method="post"></form>
+        <form action="" method="post">
         <h1>Filup Your  Information</h1>
+        <label for="">Id:</label>
         <input type="text" name="myId">
+        <label for="">Name:</label>
         <input type="text" name="myName">
         <input type="submit" value="Submit" name="btnSubmit">
+        </form>
     </section>
     <?php
     Trainee::display();
