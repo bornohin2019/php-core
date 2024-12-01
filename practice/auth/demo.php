@@ -1,12 +1,10 @@
 <?php
-
+session_start();
+if(!isset($_SESSION['mySession'])){
+    header('location:login.php');
+}
 
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +15,7 @@
 </head>
 <body>
     <form action="" method="post">
-        <h1>Login</h1>
-        <?php
-        echo isset($msg)?$msg:' ';
-        ?>
+        <h1>Filup Your Information</h1>
         <div>
             <label for="">Name:</label>
             <input type="text" name="usar">
@@ -32,6 +27,7 @@
         </div>
         <div>
             <input type="submit" value="Login" name="btnSubmit">
+            <a href="logout.php">Logout</a>
         </div>
     </form>
 </body>

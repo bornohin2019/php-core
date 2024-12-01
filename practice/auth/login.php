@@ -1,9 +1,21 @@
 <?php
+session_start();
 if(isset($_POST['btnSubmit'])){
     $usarName = $_POST['usar'];
+    $mail= $_POST['mail'];
+    $emailPattern = "/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/";
     $password = $_POST['password'];
 
+     if (!preg_match($emailPattern, $mail)) {
+        echo "<br><br><b>Invalid email address.</b><br><br>";
+     }
+     else{
+        echo "<br> type valid mail <br>";
+     }
+
+
     $file= file('store.txt');
+
     foreach($file as $singledata){
         list($storeName, $storePassword)=explode(",",trim($singledata));
                                
@@ -37,6 +49,11 @@ if(isset($_POST['btnSubmit'])){
         <div>
             <label for="">user-name:</label>
             <input type="text" name="usar">
+        </div>
+        <br>
+        <div>
+                    <label for="">mail:</label>
+                    <input type="text" name="mail">
         </div>
         <br>
         <div>
