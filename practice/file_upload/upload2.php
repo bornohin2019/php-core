@@ -5,12 +5,10 @@ if (isset($_POST['btn'])) {
     $tmp = $file['tmp_name'];    
     $fileSize = $file['size'];   
     $img = "image/";               
-    $kb = $fileSize / 1024;      
-
-    var_dump($kb);  
+    $kb = $fileSize / 1024;
 
 
-    if ($kb > 400) {
+    if ($kb >201110) {
         echo "<br><br><b>File is too large.</b><br><br>";
     } else {
 
