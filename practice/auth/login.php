@@ -3,7 +3,7 @@ session_start();
 if(isset($_POST['btnSubmit'])){
     $usarName = $_POST['usar'];
     $mail= $_POST['mail'];
-    $emailPattern = "/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/";
+    $emailPattern = "/^[^ ]+@\.+[a-zA-Z]{2,4}$/";
     $password = $_POST['password'];
 
      if (!preg_match($emailPattern, $mail)) {
