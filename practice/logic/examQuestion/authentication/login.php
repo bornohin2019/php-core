@@ -1,13 +1,14 @@
 <?php
+session_start();
 if(isset($_POST['btnSubmit'])){
     $usar = $_POST['name'];
     $password= $_POST['password'];
     $file = file('store.txt');
     foreach($file as $singleData){
-        list($usar,$password)=explode(',', trim($singleData));
+        list($usarName,$usarPassword)=explode(',', trim($singleData));
         if($usar == $usarName && $password==$usarPassword){
         $_SESSION['mySession']=$usar;
-        header('location:  main.php');
+        header('location:main.php');
         }
         else{
           $msg = "Usar and Password Invalid";

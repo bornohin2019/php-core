@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+
+if (!isset($_SESSION["mySession"])) {
+    header('location:logout.php');
+}
+require_once('myClass.php');
+if(isset($_POST['btnSubmit'])){
+$name=$_POST['name'];
+$email=$_POST['email'];
+$username=$_POST['username'];
+$password=$_POST['password'];
+
+$myObj= new Trinee($name,$email,$username,$password);
+$myObj->save();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,12 +44,11 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password">
             </div>
-            <div>
-                <label for="confirm-password">Confirm Password:</label>
-                <input type="password" name="confirm-password">
-            </div>
-            <button type="submit">Register</button>
+            <button type="submit" name="btnSubmit">Register</button>
             <a href="logout.php">Logout</a>
         </form>
+        <?php
+            Trinee:: display();
+        ?>
 </body>
 </html>
