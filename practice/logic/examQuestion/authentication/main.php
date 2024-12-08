@@ -12,8 +12,16 @@ $email=$_POST['email'];
 $username=$_POST['username'];
 $password=$_POST['password'];
 
-$myObj= new Trinee($name,$email,$username,$password);
-$myObj->save();
+ $pattern = "/^[^ ]+@\.+[a-zA-Z]{2,4}$/";
+ if(preg_match($pattern, $email)) {
+   $myObj= new Trinee($name,$email,$username,$password);
+    $myObj->save();
+ }
+ else {
+    echo "invalid email";
+ }
+
+
 }
 ?>
 
